@@ -45,36 +45,46 @@ h1 {
   margin-bottom: 1rem;
   text-align: center;
 }
-
 /* ======================================================
     FILTROS
    ====================================================== */
 
+/*
+  🔹 Container principal dos filtros
+  Responsável por agrupar e estilizar todos os campos
+  de seleção de campanha e mês, com foco em clareza e harmonia
+  com o tema escuro do painel.
+*/
 .filter-container {
-  /* Fundo acinzentado com leve transparência */
+  /* Fundo acinzentado com leve transparência para destacar sobre o fundo escuro */
   background-color: #bdb6b6e3;
   color: #222;
 
-  /* Espaçamento interno e cantos arredondados pra dar um visual mais suave */
+  /* Espaçamento interno e cantos arredondados para suavizar o visual */
   padding: 1.5rem;
   border-radius: 12px;
 
-  /* Deixo os elementos empilhados, com espaço entre eles */
+  /* Layout vertical, espaçamento entre os elementos */
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
   width: 100%;
   max-width: 360px;
 
-  /* Centralizo no meio da tela e separo um pouco de baixo */
+  /* Centraliza o bloco e adiciona respiro abaixo */
   margin: 0 auto 1.5rem;
 
-  /* Sombra e borda bem sutis pra dar profundidade */
+  /* Sombra e borda sutis para dar sensação de profundidade */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
 }
 
-/* Título interno “Filtros” */
+/* ======================================================
+    TÍTULO DO BLOCO
+   ====================================================== */
+
+/* “Filtros” */
 .filter-container h2 {
   font-size: 1.3rem;
   font-weight: 700;
@@ -82,31 +92,53 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-/* Rótulo dos campos */
+/* ======================================================
+    LABELS
+   ====================================================== */
+
+/* Rótulos dos campos (“Campanha”, “Mês/Ano”) */
 .filter-container label {
   font-weight: 600;
   color: #333;
   margin-top: 0.25rem;
 }
 
-/* Campos de seleção e input */
+/* ======================================================
+    CAMPOS DE INPUT E SELECT
+   ====================================================== */
+
 .filter-container select,
-.filter-container input {
-  /* pra deixar clicável e confortável */
-  padding: 0.6rem;
+.filter-container input,
+.filter-container input[type="month"] {
+  /* Área clicável confortável */
+  padding: 0.6rem 0.8rem;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
-  background-color: white;
+  background-color: #fff;
   color: #222;
 
-  /* Agora o campo ocupa 100% da largura do container, resolvendo o problema de sair pra fora */
+  /* 🔹 Corrige o bug do campo de mês saindo do container */
   width: 100%;
   box-sizing: border-box;
+
+  /* Transição sutil ao interagir */
   transition: all 0.3s ease;
 }
 
-/* Efeito de foco (quando o campo é clicado) */
+/* Remove aparência nativa do input de mês em alguns navegadores */
+input[type="month"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: white;
+  color: #222;
+  cursor: pointer;
+}
+
+/* ======================================================
+    EFEITOS DE FOCO
+   ====================================================== */
+
 .filter-container select:focus,
 .filter-container input:focus {
   border-color: #007bff;
@@ -114,8 +146,12 @@ h1 {
   outline: none;
 }
 
-/* Botão “Aplicar” */
+/* ======================================================
+    BOTÃO “APLICAR”
+   ====================================================== */
+
 .filter-container button {
+  /* Fundo em degradê azul */
   background: linear-gradient(90deg, #007bff, #0056b3);
   color: white;
   font-weight: 600;
@@ -124,18 +160,43 @@ h1 {
   padding: 0.7rem;
   cursor: pointer;
 
-  /* Mesmo efeito de transição suave */
+  /* Efeito de hover suave e sensação de clique */
   transition: transform 0.2s ease, background 0.3s ease;
 
-  /* Também ocupa toda a largura pra alinhar com os campos */
+  /* Ocupa toda a largura do container */
   width: 100%;
 }
 
-/* Efeito quando o mouse passa por cima */
+/* Efeito hover com escurecimento e leve elevação */
 .filter-container button:hover {
   background: linear-gradient(90deg, #0056b3, #003d80);
   transform: translateY(-1px);
 }
+
+/* ======================================================
+    RESPONSIVIDADE
+   ====================================================== */
+
+/*
+  🔹 Em telas pequenas, o container ocupa toda a largura
+  e mantém todos os campos empilhados de forma fluida.
+*/
+@media (max-width: 768px) {
+  .filter-container {
+    width: 100%;
+    max-width: none;
+    padding: 1rem;
+  }
+
+  select,
+  input,
+  button {
+    width: 100%;
+  }
+}
+
+
+
 
 /* ======================================================
     KPIs
