@@ -1,0 +1,196 @@
+/* ==============================
+   Estrutura principal
+   ============================== */
+
+/* centralização do painel dentro do #root */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* centraliza e limita a largura do painel */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* ========
+   Filtro 
+   ========*/
+
+.filter-container {
+  background-color: #bdb6b6e3; 
+  color: #222; 
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 360px;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* título de Filtros */
+.filter-container h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* labels */
+.filter-container label {
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.25rem;
+}
+
+/* inputs e selects */
+.filter-container select,
+.filter-container input {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+.filter-container select:focus,
+.filter-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* botão */
+.filter-container button {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.filter-container button:hover {
+  background: linear-gradient(90deg, #0056b3, #003d80);
+  transform: translateY(-1px);
+}
+
+/* ==============================
+   KPIs
+   ============================== */
+
+.kpis-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+  background-color: #222;
+  color: #f9f9f9;
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.kpi-label {
+  display: block;
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 0.25rem;
+}
+
+.kpi-value {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* ==============================
+   Gráfico
+   ============================== */
+
+.chart-container {
+  background-color: #1a1a1a;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+}
+
+.chart-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+/* ==============================
+   Tabela
+   ============================== */
+   
+.table-container {
+  background-color: #1a1a1a;
+  color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.table-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+th:hover {
+  color: #fff;
+}
+
+tr:hover {
+  background-color: #2f2f2f;
+  transition: 0.2s;
+}

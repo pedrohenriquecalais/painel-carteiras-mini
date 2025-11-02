@@ -1,0 +1,31 @@
+{
+  "campanhas": [
+    { "id": "000058", "nome": "Credor A" },
+    { "id": "000019", "nome": "Credor B" }
+  ],
+
+  "kpis": {
+    "objetivo_total": 150000.0,
+    "caixa_recebido": 110000.0,
+    "quebra": 12000.0
+  },
+
+  "serie_diaria": [
+    { "data": "2025-10-01", "caixa": 2100.0 },
+    { "data": "2025-10-02", "caixa": 2600.0 },
+    { "data": "2025-10-03", "caixa": 3200.0 },
+    { "data": "2025-10-04", "caixa": 2900.0 },
+    { "data": "2025-10-05", "caixa": 3500.0 },
+    { "data": "2025-10-06", "caixa": 2700.0 },
+    { "data": "2025-10-07", "caixa": 3100.0 },
+    { "data": "2025-10-08", "caixa": 2500.0 },
+    { "data": "2025-10-09", "caixa": 3300.0 },
+    { "data": "2025-10-10", "caixa": 3000.0 }
+  ],
+
+  "tabela_negociadores": [
+    { "negociador": "Ana Carolina Souza", "caixa": 17500.0, "quebra": 2500.0, "previsao": 22000.0 },
+    { "negociador": "João Silva", "caixa": 14500.0, "quebra": 3000.0, "previsao": 20000.0 },
+    { "negociador": "Maria Lima", "caixa": 16000.0, "quebra": 3500.0, "previsao": 23000.0 }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  // Configuração principal do TypeScript para projetos React + Vite
+  "compilerOptions": {
+    /* ==============================
+        Módulos e saída
+       ============================== */
+    "target": "ESNext",                 // Usa recursos modernos do JS
+    "module": "ESNext",                 // Sistema de módulos moderno
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Suporte ao navegador e APIs modernas
+    "skipLibCheck": true,               // Ignora checagem interna de libs (melhora performance)
+    "isolatedModules": true,            // Garante compatibilidade com Vite
+    "noEmit": true,                     // Não gera arquivos .js (Vite cuida disso)
+    "resolveJsonModule": true,          // Permite importar JSON diretamente
+
+    /* ==============================
+         React e JSX
+       ============================== */
+    "jsx": "react-jsx",                 // Habilita JSX moderno (sem precisar importar React)
+    "esModuleInterop": true,            // Facilita importações padrão
+    "allowSyntheticDefaultImports": true,
+
+    /* ==============================
+        Regras de validação
+       ============================== */
+    "strict": true,                     // Ativa validações rigorosas
+    "forceConsistentCasingInFileNames": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* ==============================
+        Caminhos e compatibilidade
+       ============================== */
+    "moduleResolution": "Node",
+    "moduleDetection": "force"
+  },
+
+  /* ==============================
+      Arquivos incluídos
+     ============================== */
+  "include": ["src"]
+}
