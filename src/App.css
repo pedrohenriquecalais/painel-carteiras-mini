@@ -1,49 +1,80 @@
-/* ==============================
-   Estrutura principal
-   ============================== */
+/* ======================================================
+    ESTRUTURA PRINCIPAL
+   Aqui eu defino o esqueleto básico da página e centralizo tudo.
+   ====================================================== */
 
-/* centralização do painel dentro do root */
 #root {
   display: flex;
   justify-content: center;
-  align-items: center; 
-  min-height: 100vh;
+  align-items: flex-start;
+  min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da tela */
   width: 100%;
-  padding: 1rem 0; 
-  box-sizing: border-box;
+  background-color: #111; /* Fundo escuro */
 }
 
-/*  limitando a largura do painel */
+/* Este container segura todo o conteúdo principal da página */
+.app-container,
 .content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: flex-start;
+
+  /* Limito a largura pra não ficar gigante em telas grandes */
   width: 100%;
   max-width: 800px;
-  padding: 2rem 1rem;
+
+  /* Padding pra dar respiro nas laterais e embaixo */
+  padding: 2rem 1.5rem 4rem;
   box-sizing: border-box;
+
+  color: #fff;
+
+  /* Evita quebrar o layout se o conteúdo for muito grande */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-/* ========
-   Filtro 
-   ========*/
+/* ================================
+    TÍTULO 
+   =============================== */
+
+h1 {
+  color: #ffd700; /* dourado pra destacar */
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* ======================================================
+    FILTROS
+   ====================================================== */
 
 .filter-container {
-  background-color: #bdb6b6e3; 
-  color: #222; 
+  /* Fundo acinzentado com leve transparência */
+  background-color: #bdb6b6e3;
+  color: #222;
+
+  /* Espaçamento interno e cantos arredondados pra dar um visual mais suave */
   padding: 1.5rem;
   border-radius: 12px;
+
+  /* Deixo os elementos empilhados, com espaço entre eles */
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  width: 100%;
   max-width: 360px;
+
+  /* Centralizo no meio da tela e separo um pouco de baixo */
   margin: 0 auto 1.5rem;
+
+  /* Sombra e borda bem sutis pra dar profundidade */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* título de Filtros */
+/* Título interno “Filtros” */
 .filter-container h2 {
   font-size: 1.3rem;
   font-weight: 700;
@@ -51,24 +82,31 @@
   margin-bottom: 0.5rem;
 }
 
+/* Rótulo dos campos */
 .filter-container label {
   font-weight: 600;
   color: #333;
   margin-top: 0.25rem;
 }
 
-/* inputs e selects */
+/* Campos de seleção e input */
 .filter-container select,
 .filter-container input {
+  /* pra deixar clicável e confortável */
   padding: 0.6rem;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
   background-color: white;
   color: #222;
+
+  /* Agora o campo ocupa 100% da largura do container, resolvendo o problema de sair pra fora */
+  width: 100%;
+  box-sizing: border-box;
   transition: all 0.3s ease;
 }
 
+/* Efeito de foco (quando o campo é clicado) */
 .filter-container select:focus,
 .filter-container input:focus {
   border-color: #007bff;
@@ -76,7 +114,7 @@
   outline: none;
 }
 
-/* botão */
+/* Botão “Aplicar” */
 .filter-container button {
   background: linear-gradient(90deg, #007bff, #0056b3);
   color: white;
@@ -85,17 +123,23 @@
   border-radius: 8px;
   padding: 0.7rem;
   cursor: pointer;
+
+  /* Mesmo efeito de transição suave */
   transition: transform 0.2s ease, background 0.3s ease;
+
+  /* Também ocupa toda a largura pra alinhar com os campos */
+  width: 100%;
 }
 
+/* Efeito quando o mouse passa por cima */
 .filter-container button:hover {
   background: linear-gradient(90deg, #0056b3, #003d80);
   transform: translateY(-1px);
 }
 
-/* ==============================
-   KPIs
-   ============================== */
+/* ======================================================
+    KPIs
+   ====================================================== */
 
 .kpis-container {
   display: flex;
@@ -115,6 +159,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
+/* Título pequeno dentro do card */
 .kpi-label {
   display: block;
   font-size: 0.95rem;
@@ -122,6 +167,7 @@
   margin-bottom: 0.25rem;
 }
 
+/* Valor principal em destaque */
 .kpi-value {
   display: block;
   font-size: 1.2rem;
@@ -129,9 +175,9 @@
   color: #ffd700;
 }
 
-/* ==============================
-   Gráfico
-   ============================== */
+/* ======================================================
+    GRÁFICO
+   ====================================================== */
 
 .chart-container {
   background-color: #1a1a1a;
@@ -150,10 +196,10 @@
   color: #ffd700;
 }
 
-/* ==============================
-   Tabela
-   ============================== */
-   
+/* ======================================================
+    TABELA
+   ====================================================== */
+
 .table-container {
   background-color: #1a1a1a;
   color: #f9f9f9;
@@ -163,7 +209,6 @@
   margin-bottom: 2rem;
   width: 100%;
   max-width: 800px;
-  overflow-x: auto; /* evitando quebra no mobile */
 }
 
 .table-container h2 {
@@ -175,7 +220,6 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 500px; /* garante legibilidade em telas pequenas */
 }
 
 th, td {
@@ -198,113 +242,78 @@ tr:hover {
   transition: 0.2s;
 }
 
-/* ==============================
-   Responsividade
-   ============================== */
+/* ======================================================
+   Rodapé
+   ====================================================== */
+
+.app-container p {
+  color: #ccc;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  white-space: pre-line;
+}
+
+/* Linha separadora acima  */
+.app-container p::before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 1px;
+  background: #333;
+  margin: 1.5rem auto;
+}
+
+/* ======================================================
+   Ajustes pra telas menores.
+   ====================================================== */
 
 @media (max-width: 768px) {
-  #root {
-    align-items: center;
-    padding: 1rem 0 4rem; /* adiciona espaço extra no final */
+  .app-container {
+    padding: 1rem 1rem 5rem;
   }
 
-  .content-wrapper {
-    padding: 1.5rem 1rem 4rem; /* segurança para evitar corte inferior */
-  }
-
-  .filter-container {
-    width: 100%;
-    max-width: 100%;
-    padding: 1rem;
-  }
-
-  .filter-container h2 {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .filter-container select,
-  .filter-container input,
-  .filter-container button {
-    width: 100%;
-  }
-
+  /* KPIs em coluna pra caber na tela */
   .kpis-container {
     flex-direction: column;
-    align-items: stretch;
     gap: 0.8rem;
+    align-items: center;
   }
 
   .kpi-card {
     width: 100%;
+    text-align: center;
   }
 
-  .chart-container,
+  .chart-container {
+    margin-top: 1rem;
+  }
+
   .table-container {
-    padding: 1rem;
-  }
-
-  th, td {
-    padding: 0.6rem;
+    overflow-x: auto;
     font-size: 0.9rem;
-  }
-
-  h1, h2 {
-    font-size: clamp(1rem, 4vw, 1.3rem);
-  }
-}
-
-@media (max-width: 480px) {
-  .filter-container {
-    gap: 0.6rem;
-  }
-
-  .kpi-value {
-    font-size: 1.1rem;
-  }
-
-  .chart-container h2,
-  .table-container h2 {
-    font-size: 1rem;
   }
 
   table {
-    min-width: 400px;
-  }
-}
-/* ==============================
-   Ajuste de área inferior (filtros selecionados)
-   ============================== */
-
-/* adiciona respiro no final do conteúdo */
-.content-wrapper {
-  padding-bottom: 5rem; /* espaço para o conteúdo não cortar no mobile */
-}
-
-
-.footer-info {
-  margin-top: 2rem;
-  text-align: center;
-  color: #f9f9f9;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-/* texto de campanha e mês/ano */
-.footer-info strong {
-  color: #ffd700;
-  font-weight: 700;
-}
-
-/* responsividade — mais espaço em telas pequenas */
-@media (max-width: 768px) {
-  .footer-info {
-    font-size: 0.9rem;
-    padding-bottom: env(safe-area-inset-bottom, 2rem);
-    margin-bottom: 2rem;
+    min-width: 480px; /* garante que não deforme em telas muito pequenas */
   }
 
-  .content-wrapper {
-    padding-bottom: 6rem;
+  h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  /* Filtro agora ocupa toda a largura do mobile */
+  .filter-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  /* Campos e botões também vão 100% pra acompanhar o layout */
+  select,
+  input,
+  button {
+    width: 100%;
   }
 }
