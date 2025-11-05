@@ -50,17 +50,15 @@ h1 {
    ====================================================== */
 
 /*
-  🔹 Container principal dos filtros
+  Container principal dos filtros
   Responsável por agrupar e estilizar todos os campos
-  de seleção de campanha e mês, com foco em clareza e harmonia
-  com o tema escuro do painel.
+  de seleção de campanha e mês. 
 */
 .filter-container {
-  /* Fundo acinzentado com leve transparência para destacar sobre o fundo escuro */
   background-color: #bdb6b6e3;
   color: #222;
 
-  /* Espaçamento interno e cantos arredondados para suavizar o visual */
+  /* Espaçamento interno e cantos arredondados */
   padding: 1.5rem;
   border-radius: 12px;
 
@@ -74,7 +72,7 @@ h1 {
   /* Centraliza o bloco e adiciona respiro abaixo */
   margin: 0 auto 1.5rem;
 
-  /* Sombra e borda sutis para dar sensação de profundidade */
+  /* Sombra e borda  */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-sizing: border-box;
@@ -96,7 +94,7 @@ h1 {
     LABELS
    ====================================================== */
 
-/* Rótulos dos campos (“Campanha”, “Mês/Ano”) */
+/* Rótulos dos campos “Campanha”, “Mês/Ano” */
 .filter-container label {
   font-weight: 600;
   color: #333;
@@ -117,12 +115,10 @@ h1 {
   font-size: 1rem;
   background-color: #fff;
   color: #222;
-
-  /* 🔹 Corrige o bug do campo de mês saindo do container */
   width: 100%;
   box-sizing: border-box;
 
-  /* Transição sutil ao interagir */
+  /* Transição ao interagir */
   transition: all 0.3s ease;
 }
 
@@ -151,7 +147,6 @@ input[type="month"] {
    ====================================================== */
 
 .filter-container button {
-  /* Fundo em degradê azul */
   background: linear-gradient(90deg, #007bff, #0056b3);
   color: white;
   font-weight: 600;
@@ -159,15 +154,10 @@ input[type="month"] {
   border-radius: 8px;
   padding: 0.7rem;
   cursor: pointer;
-
-  /* Efeito de hover suave e sensação de clique */
   transition: transform 0.2s ease, background 0.3s ease;
-
-  /* Ocupa toda a largura do container */
   width: 100%;
 }
 
-/* Efeito hover com escurecimento e leve elevação */
 .filter-container button:hover {
   background: linear-gradient(90deg, #0056b3, #003d80);
   transform: translateY(-1px);
@@ -178,7 +168,7 @@ input[type="month"] {
    ====================================================== */
 
 /*
-  🔹 Em telas pequenas, o container ocupa toda a largura
+   Em telas pequenas, o container ocupa toda a largura
   e mantém todos os campos empilhados de forma fluida.
 */
 @media (max-width: 768px) {
@@ -365,7 +355,7 @@ tr:hover {
     text-align: center;
   }
 
-  /* Filtro agora ocupa toda a largura do mobile */
+  /* Filtro para ocupar toda a largura do mobile */
   .filter-container {
     width: 100%;
     padding: 1rem;
